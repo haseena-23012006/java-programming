@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class Sample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String a = scanner.nextLine();  
+        String str = a.split(" ")[0];   
+        System.out.println("May I know how to learn " + str + "!!!...");
+    }
+}
