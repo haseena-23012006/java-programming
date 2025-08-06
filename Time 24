@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Time {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int hours = sc.nextInt();
+        int min = sc.nextInt();
+        int sec = sc.nextInt();
+
+        int extraMin = sec / 60;
+        sec = sec % 60;
+
+        int totalMin = min + extraMin;
+        int extraHour = totalMin / 60;
+        min = totalMin % 60;
+
+        hours=hours+extraHour;
+
+        System.out.println("Total Number of hours is " + hours);
+        System.out.println("Total Number of minutes is " + min);
+        System.out.println("Total Number of seconds is " + sec);
+    }
+}
