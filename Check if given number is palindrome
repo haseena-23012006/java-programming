@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        if (num >= 100 && num <= 999) {
+            int hundreds = num / 100;
+            int tens = (num / 10) % 10;
+            int units = num % 10;
+
+            if (hundreds == units) {
+                System.out.println("palindrome");
+            } else {
+                System.out.println("not palindrome");
+            }
+        } else {
+            System.out.println("Invalid Input");
+        }
+    }
+}
