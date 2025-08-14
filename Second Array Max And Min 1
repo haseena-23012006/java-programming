@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Array {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] a = new int[size];
+        for (int i = 0; i < size; i++) {
+            a[i] = sc.nextInt();
+        }
+        int evenCount = (size + 1) / 2;  
+        int oddCount = size / 2;         
+
+        int[] evenElements = new int[evenCount];
+        int[] oddElements = new int[oddCount];
+        int evenIdx = 0, oddIdx = 0;
+        for (int i = 0; i < size; i++) {
+            if (i % 2 == 0) {
+                evenElements[evenIdx++] = a[i];
+            } else {
+                oddElements[oddIdx++] = a[i];
+            }
+        }        
+        for (int i = 0; i < evenCount - 1; i++) {
+            for (int j = i + 1; j < evenCount; j++) {
+                if (evenElements[i] > evenElements[j]) {
+                    int temp = evenElements[i];
+                    evenElements[i] = evenElements[j];
+                    evenElements[j] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < oddCount - 1; i++) {
+            for (int j = i + 1; j < oddCount; j++) {
+                if (oddElements[i] > oddElements[j]) {
+                    int temp = oddElements[i];
+                    oddElements[i] = oddElements[j];
+                    oddElements[j] = temp;
+                }
+            }
+        }
+        int secondLargestEven = evenElements[evenCount - 2];
+        int secondSmallestOdd = oddElements[1];
+        int sum = secondLargestEven + secondSmallestOdd;
+        System.out.println("Sum=" + sum);
+
+        
+    }
+}
