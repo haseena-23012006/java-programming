@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Flight {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size=sc.nextInt();
+        int a[]=new int[size]; 
+        
+        for (int i=0;i<size;i++) {
+            a[i]=sc.nextInt();
+        }
+        int Youngest=a[0];
+        int Oldest=a[0];
+        
+        for (int i=1; i<size; i++) {
+            if (a[i]<Youngest) {
+                Youngest=a[i];
+            }
+            if (a[i]>Oldest) {
+                Oldest=a[i];
+            }
+        } 
+        System.out.println("Youngest=" +Youngest);
+        System.out.println("Oldest=" + Oldest);
+
+        
+    }
+}
