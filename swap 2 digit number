@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class swap{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        if (num < 10) {
+            System.out.print("STDOUT");
+        } else {
+            int n=num;
+            while(n>=100){
+                n/=10;
+            }
+            int first = n / 10;
+            int second = n % 10;
+            System.out.println(second * 10 + first);
+        }
+    }
+}
