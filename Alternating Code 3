@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Alternate {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine().trim();
+
+        if (S.length() < 2) {
+            System.out.println("No");
+            return;
+        }
+
+        char firstChar = S.charAt(0);
+        char secondChar = 0;
+        int i;
+
+        for (i = 1; i < S.length(); i++) {
+            if (S.charAt(i) != firstChar) {
+                secondChar = S.charAt(i);
+                break;
+            }
+        }
+
+        if (i == S.length()) {
+            System.out.println("No");
+            return;
+        }
+
+        for (i = 0; i < S.length(); i++) {
+            char c = S.charAt(i);
+            if (c != firstChar && c != secondChar) {
+                System.out.println("No");
+                return;
+            }
+        }
+
+        for (i = 0; i < S.length(); i++) {
+            if (i % 2 == 0 && S.charAt(i) != firstChar) {
+                break;
+            }
+            if (i % 2 == 1 && S.charAt(i) != secondChar) {
+                break;
+            }
+        }
+
+        if (i == S.length()) {
+            System.out.println("Yes");
+            return;
+        }
+
+        for (i = 0; i < S.length(); i++) {
+            if (i % 2 == 0 && S.charAt(i) != secondChar) {
+                break;
+            }
+            if (i % 2 == 1 && S.charAt(i) != firstChar) {
+                break;
+            }
+        }
+
+        if (i == S.length()) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
